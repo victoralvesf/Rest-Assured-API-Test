@@ -8,7 +8,7 @@ import java.util.Map;
 import static io.restassured.RestAssured.given;
 
 public class Auth {
-    private static final Dotenv dotenv = Dotenv.load();
+    private static final Dotenv dotenv = Dotenv.configure().ignoreIfMissing().load();
 
     private static final String USER_EMAIL = dotenv.get("USER_EMAIL");
     private static final String USER_PASSWORD = dotenv.get("USER_PASSWORD");
